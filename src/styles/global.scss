@@ -1,0 +1,89 @@
+:root {
+  /* base color-weight scale */
+  --color-weight-1: 82%;
+  --color-weight-2: 72%;
+  --color-weight-3: 62%;
+  --color-weight-4: 52%;
+  --color-weight-5: 42%;
+  --color-weight-6: 32%;
+  --color-weight-7: 22%;
+  --color-weight-8: 12%;
+  --color-weight-9: 2%;
+
+  /* base colors */
+  --color-hs-pink: 310 100%;
+  --color-hs-yellow: 61 100%;
+  --color-hs-purple: 258 47%;
+
+  /* functional colors */
+  --color-hs-primary: var(--color-hs-purple);
+  --color-hs-accent: var(--color-hs-pink);
+  --color-hs-highlight: var(--color-hs-yellow);
+
+  /* weighted functional colors */
+  @for $i from 1 through 9 {
+    /* stylelint-disable-next-line custom-property-pattern */
+    --color-primary-#{$i}: hsl(var(--color-hs-primary) var(--color-weight-#{$i}));
+    /* stylelint-disable-next-line custom-property-pattern */
+    --color-accent-#{$i}: hsl(var(--color-hs-accent) var(--color-weight-#{$i}));
+    /* stylelint-disable-next-line custom-property-pattern */
+    --color-highlight-#{$i}: hsl(var(--color-hs-highlight) var(--color-weight-#{$i}));
+  }
+
+  /* common uses */
+  --color-dark: var(--color-primary-9);
+  --color-accent: var(--color-accent-4);
+
+  /* THE gradient™️ */
+  --gradient-slinkity: hsl(var(--color-hs-accent) 50%), hsl(var(--color-hs-highlight) 50%);
+
+  /* misc */
+  --content-max-width: 1200px;
+  --rounded-corners: 5px;
+  --shadow-heavy: 0 4px 14px #000;
+  --default-padding: clamp(1em, 5vh, 3em) clamp(1em, 4vw, 2em);
+
+  /* animation */
+  --animation-base-duration: 275ms;
+  --animation-base-easing: ease-in-out;
+
+  /* font-sizes */
+  --h1: 64px;
+  --h2: 48px;
+  --h3: 36px;
+  --h4: 24px;
+
+  /* font-stacks */
+  --pro-hacker-font: consolas, monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --base-font:
+    "Atkinson",
+    "Open Sans",
+    -apple-system,
+    blinkmacsystemfont,
+    "Segoe UI",
+    roboto,
+    oxygen,
+    ubuntu,
+    cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+  font-family: var(--base-font);
+}
+
+html {
+  font-family: var(--base-font);
+  color: white;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+}
