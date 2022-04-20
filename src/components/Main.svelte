@@ -1,34 +1,10 @@
 <script>
-  import Twitter from "./icons/Twitter.svelte";
-  import GitHub from "./icons/GitHub.svelte";
-  import Discord from "./icons/Discord.svelte";
-  import Devto from "./icons/Devto.svelte";
-  import Astro from "./icons/Astro.svelte";
+  import TextFooter from "./TextFooter.svelte";
 </script>
 
 <main>
   <div class="camera-box" />
-  <div class="text-footer">
-    <div>
-      <h1>@bholmesdev</h1>
-      <p class="tagline">Whiteboardist that codes mildly well</p>
-    </div>
-    <div class="icons social">
-      <p class="icons__heading">Also bholmesdev on</p>
-      <div>
-        <Twitter />
-        <GitHub />
-        <Discord />
-        <Devto />
-      </div>
-    </div>
-    <div class="icons">
-      <p class="icons__heading">Try Astro like my job depends on it</p>
-      <span class="astro-build-text">
-        <Astro /> astro.build
-      </span>
-    </div>
-  </div>
+  <TextFooter />
 </main>
 
 <style lang="scss">
@@ -102,57 +78,6 @@
         filter: blur(0.3rem);
       }
     }
-  }
-  .text-footer {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    gap: 4rem;
-  }
-  .icons {
-    font-size: 1.3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    &__heading {
-      @include mixins.decorative-text;
-      font-size: 0.8rem;
-      color: var(--color-primary-2);
-      margin: 0;
-    }
-
-    &.social {
-      :global(svg) {
-        animation: icon-hover 2s ease-in-out infinite;
-        transform: translateY(-0.2rem);
-      }
-
-      @for $i from 0 through 3 {
-        :global(svg):nth-child(#{$i + 1}) {
-          animation-delay: $i * 200ms;
-        }
-      }
-
-      @keyframes icon-hover {
-        0%,
-        100% {
-          transform: translateY(-0.1rem);
-        }
-        50% {
-          transform: translateY(0.1rem);
-        }
-      }
-    }
-  }
-  .astro-build-text {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .tagline {
-    font-style: italic;
-    margin: 0;
-    color: var(--color-primary-1);
   }
   .camera-box {
     height: 80%;
