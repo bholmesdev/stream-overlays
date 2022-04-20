@@ -62,13 +62,14 @@
       list-style: none;
       border-left: 0.2rem solid var(--color-primary-6);
       padding-inline-start: 0.8rem;
+      background: hsl(var(--color-hs-primary) var(--color-weight-6) / 0.5);
 
       > li:first-child {
         padding-top: 0.8rem;
       }
 
       > li:last-child {
-        padding-bottom: 0.2rem;
+        padding-bottom: 0.8rem;
       }
 
       > li {
