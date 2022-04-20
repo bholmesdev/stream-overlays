@@ -25,3 +25,9 @@
     background-size: 100%;
   }
 }
+
+@mixin decorative-text {
+  font-family: var(--pro-hacker-font);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
