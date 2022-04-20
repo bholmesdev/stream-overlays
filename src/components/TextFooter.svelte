@@ -30,15 +30,7 @@
 
 <style lang="scss">
   @use "../styles/mixins";
-  main {
-    --padding: 1rem;
-    aspect-ratio: 1920 / 1080;
-    padding: var(--padding);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
+
   h1 {
     position: relative;
     font-size: 2.5rem;
@@ -104,6 +96,7 @@
     display: grid;
     grid-template-columns: auto auto 1fr;
     gap: 4rem;
+    grid-area: "footer";
   }
   .icons {
     font-size: 1.3rem;
