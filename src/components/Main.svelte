@@ -4,7 +4,15 @@
 
 <main>
   <div class="camera-box__main" />
-  <div class="camera-box__facecam" />
+  <div class="sidebar">
+    <div class="camera-box__facecam" />
+    <h2>What are we up to?</h2>
+    <ul>
+      <li>Chatting with the lovelies! Welcome y'all 👋</li>
+      <li>Exploring my new stream setup</li>
+      <li>Trying Astro + Contentful?</li>
+    </ul>
+  </div>
   <TextFooter />
 </main>
 
@@ -15,8 +23,8 @@
     padding: 1rem;
     display: grid;
     grid-template-areas:
-      "maincam facecam"
-      "footer footer";
+      "maincam sidebar"
+      "footer sidebar";
     grid-template-columns: 8.25fr 1.75fr;
     gap: 1rem;
     align-items: space-between;
@@ -35,10 +43,41 @@
       background: var(--color-primary-7);
     }
   }
+
+  .sidebar {
+    grid-area: sidebar;
+
+    h2 {
+      @include mixins.decorative-text;
+      color: var(--color-primary-1);
+      font-size: 0.88rem;
+      background: var(--color-primary-6);
+      padding: 0.3rem 0.8rem;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin-top: 0;
+      list-style: none;
+      border-left: 0.2rem solid var(--color-primary-6);
+      padding-inline-start: 0.8rem;
+
+      > li:first-child {
+        padding-top: 0.8rem;
+      }
+
+      > li:last-child {
+        padding-bottom: 0.2rem;
+      }
+
+      > li {
+        margin-bottom: 0.6rem;
+      }
+    }
+  }
   .camera-box__facecam {
-    position: relative;
     aspect-ratio: 1 / 1;
-    grid-area: facecam;
     background: var(--color-primary-7);
     border: 0.1rem solid var(--color-primary-5);
   }
