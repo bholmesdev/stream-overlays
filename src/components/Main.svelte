@@ -3,93 +3,43 @@
 </script>
 
 <main>
-  <div class="camera-box" />
+  <div class="camera-box__main" />
+  <div class="camera-box__facecam" />
   <TextFooter />
 </main>
 
 <style lang="scss">
   @use "../styles/mixins";
   main {
-    --padding: 1rem;
     aspect-ratio: 1920 / 1080;
-    padding: var(--padding);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    padding: 1rem;
+    display: grid;
+    grid-template-areas:
+      "maincam facecam"
+      "footer footer";
+    grid-template-columns: 8.25fr 1.75fr;
+    gap: 1rem;
+    align-items: space-between;
   }
-  h1 {
-    position: relative;
-    font-size: 2.5rem;
-    margin: 0;
-    margin-bottom: 0.5rem;
 
-    &::before {
-      color: var(--color-accent);
-      animation: bholmesdev-neon-1 5s linear infinite;
-    }
-    &::after {
-      color: var(--color-highlight);
-      animation: bholmesdev-neon-2 5s linear infinite;
-    }
-
-    &::before,
-    &::after {
-      content: "@bholmesdev";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      opacity: 0.8;
-    }
-
-    @keyframes bholmesdev-neon-1 {
-      0%,
-      100%,
-      20%,
-      80% {
-        transform: translate(0, 0);
-        filter: blur(0.1rem);
-      }
-      33% {
-        transform: translate(3px, 1px);
-        filter: blur(0.3rem);
-      }
-      67% {
-        transform: translate(1px, 3px);
-        filter: blur(0.3rem);
-      }
-    }
-
-    @keyframes bholmesdev-neon-2 {
-      0%,
-      100%,
-      20%,
-      80% {
-        transform: translate(0, 0);
-        filter: blur(0.1rem);
-      }
-
-      33% {
-        transform: translate(-3px, -1px);
-        filter: blur(0.3rem);
-      }
-      67% {
-        transform: translate(-1px, -3px);
-        filter: blur(0.3rem);
-      }
-    }
-  }
-  .camera-box {
-    height: 80%;
+  .camera-box__main {
     position: relative;
     aspect-ratio: 1920 / 1080;
+    grid-area: maincam;
     background: linear-gradient(-45deg, var(--gradient-slinkity));
 
     &::after {
       content: "";
       position: absolute;
-      inset: 0.5rem;
+      inset: 0.3rem;
       background: var(--color-primary-7);
     }
+  }
+  .camera-box__facecam {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    grid-area: facecam;
+    background: var(--color-primary-7);
+    border: 0.1rem solid var(--color-primary-5);
   }
 </style>
