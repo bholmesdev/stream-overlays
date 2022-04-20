@@ -2,8 +2,8 @@
   --grid-size: 2rem;
   background: var(--color-primary-9);
   background-image:
-    linear-gradient(var(--color-primary-7) 1px, transparent 0),
-    linear-gradient(90deg, var(--color-primary-7) 1px, transparent 0);
+    linear-gradient(var(--color-primary-6) 1px, transparent 0),
+    linear-gradient(90deg, var(--color-primary-6) 1px, transparent 0);
   background-size: var(--grid-size) var(--grid-size);
   animation: scroll 3s linear infinite;
 
@@ -21,7 +21,7 @@
     position: fixed;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(transparent 75%, var(--color-primary-9) 100%);
+    background: linear-gradient(transparent 95%, var(--color-primary-9) 100%);
     background-size: 100%;
   }
 }
