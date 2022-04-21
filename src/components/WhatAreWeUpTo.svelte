@@ -2,7 +2,6 @@
   <h2>What are we up to?</h2>
   <ul>
     <li>Chatting with the lovelies! Welcome y'all 👋</li>
-    <li>Exploring my new stream setup</li>
     <li>Trying Astro + Contentful?</li>
   </ul>
 </div>
