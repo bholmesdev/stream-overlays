@@ -8,6 +8,7 @@
     // as long as the ::after is 1920 / 1080, we're golden!
     aspect-ratio: 1920 / 1089;
     background: linear-gradient(-45deg, var(--gradient-slinkity));
+    box-shadow: 0 0.3rem 1rem black;
 
     &::after {
       content: "";
