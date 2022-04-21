@@ -50,7 +50,7 @@
     h2 {
       @include mixins.decorative-text;
       color: var(--color-primary-1);
-      font-size: 0.88rem;
+      font-size: 0.8rem;
       background: var(--color-primary-6);
       padding: 0.3rem 0.8rem;
       text-align: center;
