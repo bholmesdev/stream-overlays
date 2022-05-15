@@ -20,11 +20,25 @@
       <Devto />
     </div>
   </div>
-  <div class="icons">
-    <p class="icons__heading">Try Astro like my job depends on it</p>
-    <span class="astro-build-text">
-      <Astro /> astro.build
-    </span>
+  <div class="icons rotating-text-container">
+    <div class="rotating-text">
+      <div>
+        <p class="icons__heading">Join my pomodoro work sess</p>
+        <p>⏰ bholmes.dev/<strong>centered</strong></p>
+      </div>
+      <div>
+        <p class="icons__heading">Join my music listening sess</p>
+        <p>🎧 bholmes.dev/<strong>spotify</strong></p>
+      </div>
+      <div>
+        <p class="icons__heading">Try Astro like my job depends on it</p>
+        <p class="astro-build-text"><Astro /> astro.build</p>
+      </div>
+      <div>
+        <p class="icons__heading">Join my pomodoro work sess</p>
+        <p>⏰ bholmes.dev/<strong>centered</strong></p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -139,6 +153,33 @@
     align-items: center;
     gap: 0.5rem;
   }
+  .rotating-text {
+    animation: loop-ctas 20s ease-in-out infinite;
+  }
+
+  .rotating-text-container {
+    overflow: hidden;
+    height: 8vh;
+  }
+
+  @keyframes loop-ctas {
+    0%,
+    32% {
+      transform: translateY(0);
+    }
+    33%,
+    66% {
+      transform: translateY(-24%);
+    }
+    67%,
+    99% {
+      transform: translateY(-48%);
+    }
+    100% {
+      transform: translateY(-76%);
+    }
+  }
+
   .tagline {
     font-style: italic;
     margin: 0;
