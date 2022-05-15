@@ -1,13 +1,13 @@
 <script>
-  import WhatAreWeUpTo from "./WhatAreWeUpTo.svelte";
   import TextFooter from "./TextFooter.svelte";
-  import Maincam from "./icons/Maincam.svelte";
+  import Maincam from "./Maincam.svelte";
+  import Chat from "./Chat.svelte";
 </script>
 
 <main>
   <Maincam />
   <div style="grid-area: sidebar">
-    <WhatAreWeUpTo />
+    <Chat />
   </div>
   <TextFooter />
 </main>

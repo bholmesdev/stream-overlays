@@ -1,15 +1,15 @@
 <script>
   import Facecam from "./Facecam.svelte";
-  import WhatAreWeUpTo from "./WhatAreWeUpTo.svelte";
   import TextFooter from "./TextFooter.svelte";
-  import Maincam from "./icons/Maincam.svelte";
+  import Maincam from "./Maincam.svelte";
+  import Chat from "./Chat.svelte";
 </script>
 
 <main>
   <Maincam />
   <div class="sidebar">
     <Facecam />
-    <WhatAreWeUpTo />
+    <Chat />
   </div>
   <TextFooter />
 </main>
