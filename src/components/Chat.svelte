@@ -6,6 +6,7 @@
 
 <style>
   .chat-embed {
+    margin-inline: -1.8rem;
     width: 100%;
     height: 100%;
     border: none;
