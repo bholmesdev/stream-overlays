@@ -6,7 +6,7 @@
 
 <main>
   <Maincam />
-  <div style="grid-area: sidebar">
+  <div class="sidebar">
     <Chat />
   </div>
   <TextFooter />
@@ -24,5 +24,12 @@
     grid-template-columns: 8.25fr 1.75fr;
     gap: 1rem;
     align-items: space-between;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 </style>
