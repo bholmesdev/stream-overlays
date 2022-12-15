@@ -1,8 +1,8 @@
 <script>
-  import Facecam from "./Facecam.svelte";
-  import TextFooter from "./TextFooter.svelte";
-  import Maincam from "./Maincam.svelte";
-  import Chat from "./Chat.svelte";
+  import Facecam from "../components/Facecam.svelte";
+  import TextFooter from "../components/TextFooter.svelte";
+  import Maincam from "../components/Maincam.svelte";
+  import Chat from "../components/Chat.svelte";
 </script>
 
 <main>
