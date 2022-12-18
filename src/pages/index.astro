@@ -1,0 +1,57 @@
+---
+import Layout from "../components/Layout.astro";
+
+const overlays = await Astro.glob("./*.astro");
+---
+
+<Layout>
+  <div class="screen-center">
+    <main>
+      <h1>bholmesdev twitch overlays</h1>
+      <ul>
+        {
+          overlays.map((overlay) => {
+            const { url } = overlay;
+            const name = url.replace(/^\//, "");
+            return (
+              <li>
+                <a href={url}>{name}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .screen-center {
+    display: grid;
+    place-items: center;
+    min-height: 100dvh;
+  }
+
+  main {
+    margin: auto;
+    max-width: 60ch;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  a {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    margin-block-end: 0.5rem;
+  }
+
+  a:hover {
+    color: var(--color-highlight);
+  }
+</style>
