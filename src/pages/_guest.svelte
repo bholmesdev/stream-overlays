@@ -1,6 +1,4 @@
 <script>
-  import TextFooter from "../components/TextFooter.svelte";
-  import Maincam from "../components/Maincam.svelte";
   import Chat from "../components/Chat.svelte";
   import Splitcam from "../components/Splitcam.svelte";
   import BholmesdevGlow from "../components/BholmesdevGlow.svelte";
@@ -10,13 +8,13 @@
 <main>
   <Splitcam />
   <Splitcam />
-  <div class="chat">
-    <Chat />
-  </div>
-  <div class="footer">
+  <section class="footer">
     <BholmesdevGlow />
     <AlsoBholmesdevOn />
-  </div>
+    <div class="chat">
+      <Chat />
+    </div>
+  </section>
 </main>
 
 <style lang="scss">
@@ -27,25 +25,21 @@
     display: grid;
     grid-template-areas:
       "splitcam splitcam"
-      "footer chat";
+      "footer footer";
     grid-template-columns: 50% 50%;
-    grid-template-rows: 3fr 1fr;
-    gap: 1rem;
+    grid-template-rows: 75% 25%;
+    gap: 0.8rem;
     align-items: space-between;
   }
-
-  .chat {
-    grid-area: chat;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
   .footer {
+    grid-area: footer;
     display: grid;
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: auto 1fr 30%;
     gap: 4rem;
-    grid-area: "footer";
     align-items: center;
+  }
+  .chat {
+    align-self: stretch;
+    display: flex;
   }
 </style>
