@@ -1,0 +1,63 @@
+---
+import Bholmesdev from "../components/Bholmesdev.astro";
+import Layout from "../components/Layout.astro";
+import { Discord, GitHub, Twitter, YouTube } from "../components/~icons";
+---
+
+<Layout title="Lower third">
+  <main>
+    <Bholmesdev />
+    <div class="icons">
+      <YouTube />
+      <Twitter />
+      <GitHub />
+    </div>
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    padding-inline: 2rem;
+    padding-block-end: 1rem;
+  }
+
+  main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0, var(--color-dark), transparent);
+  }
+
+  .icons {
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    :global(svg) {
+      animation: icon-hover 2s ease-in-out infinite;
+      transform: translateY(-0.2rem);
+    }
+
+    @for $i from 0 through 3 {
+      :global(svg):nth-child(#{$i + 1}) {
+        animation-delay: $i * 200ms;
+      }
+    }
+
+    @keyframes icon-hover {
+      0%,
+      100% {
+        transform: translateY(-0.1rem);
+      }
+      50% {
+        transform: translateY(0.1rem);
+      }
+    }
+  }
+</style>

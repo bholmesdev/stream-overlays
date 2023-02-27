@@ -1,0 +1,16 @@
+---
+const redirectUrl =
+  "https://bholmesdev-twitch-chat.netlify.app/c/bholmesdev?theme=bholmesdev&hideMessagesFrom=PretzelRocks";
+---
+
+<html>
+  <head>
+    <meta http-equiv="refresh" content={`2;url=${redirectUrl}`} />
+    <title>Chat embed redirect</title>
+  </head>
+  <body>
+    This redirects to a chat embed deployed separately. If not redirected, go to <a
+      href={redirectUrl}>{redirectUrl}</a
+    >
+  </body>
+</html>

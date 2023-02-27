@@ -9,13 +9,14 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "@astrojs/svelte": "^1.0.2",
-    "astro": "^1.6.15",
-    "svelte": "^3.55.0"
+    "@acab/ecsstatic": "^0.6.0",
+    "astro": "^2.0.15"
   },
   "dependencies": {
+    "@astrojs/solid-js": "^2.0.2",
     "nanoid": "^4.0.0",
     "sass": "^1.50.0",
+    "solid-js": "^1.4.3",
     "tmi.js": "^1.8.5"
   }
 }

@@ -1,51 +1,53 @@
 ---
-import '../styles/global.scss'
-import '../styles/fonts.css'
+import "../styles/global.scss";
+import "../styles/fonts.css";
 
-const { title = 'bholmesdev' } = Astro.props
+const { title = "bholmesdev" } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
       rel="preload"
       href="/fonts/Atkinson/Atkinson-Hyperlegible-Regular.woff2"
       as="font"
       type="font/woff2"
-      crossorigin="anonymous">
+      crossorigin="anonymous"
+    />
     <link
       rel="preload"
       href="/fonts/Atkinson/Atkinson-Hyperlegible-Bold.woff2"
       as="font"
       type="font/woff2"
-      crossorigin="anonymous">
+      crossorigin="anonymous"
+    />
     <link
       rel="preload"
       href="/fonts/Atkinson/Atkinson-Hyperlegible-Italic.woff2"
       as="font"
       type="font/woff2"
-      crossorigin="anonymous">
+      crossorigin="anonymous"
+    />
     <link
       rel="preload"
       href="/fonts/Atkinson/Atkinson-Hyperlegible-BoldItalic.woff2"
       as="font"
       type="font/woff2"
-      crossorigin="anonymous">
-  <title>{title}</title>
-</head>
-<body>
-  <slot />
-</body>
+      crossorigin="anonymous"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
-<style lang="scss">
-  @use "../styles/mixins" as *;
+<style>
   body {
     margin: 0;
-    @include gradient-grid;
   }
 </style>

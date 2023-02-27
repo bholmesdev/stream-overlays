@@ -1,32 +1,43 @@
-<div>
-  <h1>@bholmesdev</h1>
-  <p class="tagline">Whiteboardist that codes mildly well</p>
-</div>
+---
+const tag = "@bholmesdev";
+---
+
+<h1>
+  <span class="accent">{tag}</span>
+  <span class="highlight">{tag}</span>
+  <span class="main">{tag}</span>
+  {tag}
+</h1>
 
 <style lang="scss">
-  @use "../styles/mixins";
-
   h1 {
+    line-height: 1;
     position: relative;
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
     margin: 0;
-    margin-bottom: 0.5rem;
 
-    &::before {
+    span.accent {
       color: var(--color-accent);
       animation: bholmesdev-neon-1 5s linear infinite;
     }
-    &::after {
+    span.highlight {
       color: var(--color-highlight);
       animation: bholmesdev-neon-2 5s linear infinite;
     }
 
-    &::before,
-    &::after {
+    span {
       content: "@bholmesdev";
       position: absolute;
       inset: 0;
-      z-index: -1;
+      z-index: 0;
+    }
+
+    span.main {
+      z-index: 1;
+    }
+
+    span.accent,
+    span.highlight {
       opacity: 0.8;
     }
 
@@ -66,11 +77,5 @@
         filter: blur(0.3rem);
       }
     }
-  }
-
-  .tagline {
-    font-style: italic;
-    margin: 0;
-    color: var(--color-primary-1);
   }
 </style>

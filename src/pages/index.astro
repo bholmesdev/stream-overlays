@@ -1,17 +1,18 @@
 ---
+import BholmesdevGlow from "../components/Bholmesdev.astro";
 import Layout from "../components/Layout.astro";
 
-const overlays = await Astro.glob("./*.astro");
+const overlays = import.meta.glob("./*.astro");
 ---
 
 <Layout>
   <div class="screen-center">
     <main>
-      <h1>bholmesdev twitch overlays</h1>
+      <BholmesdevGlow />
       <ul>
         {
-          overlays.map((overlay) => {
-            const { url } = overlay;
+          Object.keys(overlays).map((overlay) => {
+            const url = overlay.replace(/\.\/|\.astro/g, "");
             const name = url.replace(/^\//, "");
             return (
               <li>
