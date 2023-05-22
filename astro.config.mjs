@@ -1,14 +1,18 @@
-import { defineConfig } from 'astro/config';
-import svelte from "@astrojs/svelte";
+import { defineConfig } from "astro/config";
 import solidJs from "@astrojs/solid-js";
-import { ecsstatic } from '@acab/ecsstatic/vite';
+import { ecsstatic } from "@acab/ecsstatic/vite";
+
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [svelte(), solidJs()],
+  output: "hybrid",
+  experimental: {
+    hybridOutput: true
+  },
+  integrations: [solidJs()],
   vite: {
-    plugins: [
-      ecsstatic()
-    ]
-  }
+    plugins: [ecsstatic()]
+  },
+  adapter: vercel()
 });
