@@ -1,5 +1,5 @@
 ---
-import BholmesdevGlow from "../components/Bholmesdev.astro";
+import GlowingText from "../components/GlowingText.astro";
 import Layout from "../components/Layout.astro";
 
 const overlays = import.meta.glob("./*.astro");
@@ -8,7 +8,7 @@ const overlays = import.meta.glob("./*.astro");
 <Layout>
   <div class="screen-center">
     <main>
-      <BholmesdevGlow />
+      <GlowingText text="Stream overlays" />
       <ul>
         {
           Object.keys(overlays).map((overlay) => {

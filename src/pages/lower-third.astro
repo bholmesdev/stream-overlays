@@ -1,12 +1,18 @@
 ---
-import Bholmesdev from "../components/Bholmesdev.astro";
+export const prerender = false;
+
+import GlowingText from "../components/GlowingText.astro";
 import Layout from "../components/Layout.astro";
-import { Discord, GitHub, Twitter, YouTube } from "../components/~icons";
+import { GitHub, Twitter, YouTube } from "../components/~icons";
+
+const { searchParams } = new URL(Astro.request.url);
+
+const text = searchParams.get("text") ?? "@bholmesdev";
 ---
 
 <Layout title="Lower third">
   <main>
-    <Bholmesdev />
+    <GlowingText {text} />
     <div class="icons">
       <YouTube />
       <Twitter />

@@ -1,12 +1,12 @@
 ---
-const tag = "@bholmesdev";
+const { text } = Astro.props;
 ---
 
 <h1>
-  <span class="accent">{tag}</span>
-  <span class="highlight">{tag}</span>
-  <span class="main">{tag}</span>
-  {tag}
+  <span class="accent">{text}</span>
+  <span class="highlight">{text}</span>
+  <span class="main">{text}</span>
+  {text}
 </h1>
 
 <style lang="scss">
@@ -26,7 +26,6 @@ const tag = "@bholmesdev";
     }
 
     span {
-      content: "@bholmesdev";
       position: absolute;
       inset: 0;
       z-index: 0;
